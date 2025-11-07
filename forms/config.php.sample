@@ -1,0 +1,4 @@
+<?php
+// Duplique este arquivo como config.php e ajuste os e-mails abaixo
+define('CANAL_EMAIL_TO',   'compliance@siderurgicabandeirante.ind.br'); // quem recebe
+define('CANAL_EMAIL_FROM', 'nao-responder@siderurgicabandeirante.ind.br'); // remetente técnico

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Denúncia enviada</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container" style="max-width:740px;margin:120px auto">
+    <h3 class="section-title">Recebemos sua denúncia</h3>
+    <div class="section-title-divider"></div>
+    <p>Protocolo: <strong id="ticket">—</strong></p>
+<a class="btn btn-outline-primary" id="btn-consulta" href="consulta.html">Acompanhar agora</a>
+
+<p>Protocolo: <strong id="ticket">—</strong></p>
+<script>
+  const p = new URLSearchParams(location.search);
+  const id = p.get('ticket') || p.get('protocolo') || '—';
+  document.getElementById('ticket').textContent = id;
+</script>
+<p class="alert alert-info" style="margin-top:10px">
+  Guarde este número. Você pode acompanhar o andamento em <a href="consulta.html">Consultar Protocolo</a>.
+</p>
+
+</body>
+</html>

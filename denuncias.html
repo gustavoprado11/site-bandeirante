@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Canal de Denúncias — Siderúrgica Bandeirante</title>
+
+    <!-- MESMAS FONTS E CSS DO SITE -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+      .canal-wrap { max-width: 900px; margin: 120px auto 60px; padding: 24px; border: 1px solid #e9e9ee; border-radius: 12px; }
+      .muted { color:#6b7280; }
+      .pill { display:inline-block; border:2px solid currentColor; padding:10px 14px; border-radius:999px; font-weight:700; text-decoration:none; }
+    </style>
+  </head>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // ====== CONSULTAR PROTOCOLO (se o campo existir na página) ======
+      const inputConsulta = document.getElementById('consulta-protocolo');
+      const btnConsulta   = document.getElementById('btn-consultar-protocolo');
+      if (btnConsulta && inputConsulta) {
+        const irConsultar = () => {
+          const v = (inputConsulta.value || '').trim();
+          if (!v) { alert('Digite o protocolo.'); return; }
+          window.location.href = 'consulta.html?protocolo=' + encodeURIComponent(v);
+        };
+        btnConsulta.addEventListener('click', irConsultar);
+        inputConsulta.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') { e.preventDefault(); irConsultar(); }
+        });
+      }
+    
+      // ====== FORM: gerar protocolo e anexar ao redirect ======
+      const form = document.querySelector('form.php-email-form');
+      if (!form) return;
+    
+      function gerarProtocolo() {
+        const d = new Date();
+        const data = d.toISOString().slice(0,10).replace(/-/g,'');
+        const rnd  = Math.random().toString(36).slice(2,8).toUpperCase();
+        return `SB-${data}-${rnd}`;
+      }
+    
+      form.addEventListener('submit', function () {
+        const p = gerarProtocolo();
+    
+        // Preenche campo oculto (vai por e-mail e no Web3Forms)
+        const campoProto = document.getElementById('protocolo');
+        if (campoProto) campoProto.value = p;
+    
+        // Mostra aviso para guardar o protocolo (se existir)
+        const aviso = document.getElementById('pre-protocolo');
+        if (aviso) {
+          aviso.textContent = `Protocolo gerado: ${p}. Guarde este número para acompanhar o andamento.`;
+          aviso.style.display = 'block';
+        }
+    
+        // Inclui o protocolo na URL de sucesso
+        const redirEl = document.getElementById('redirect');
+        if (redirEl && redirEl.value) {
+          try {
+            const url = new URL(redirEl.value);
+            url.searchParams.set('protocolo', p);
+            url.searchParams.set('ticket', p); // compatível com a página de sucesso
+            redirEl.value = url.toString();
+          } catch (e) {}
+        }
+    
+        // (Opcional) guardar localmente
+        try { localStorage.setItem('ultimoProtocolo', p); } catch (e) {}
+      });
+    });
+    </script>    
+
+  <body>
+
+    <!-- Header igual ao do site -->
+    <header id="header">
+      <div class="container">
+        <div id="logo" class="pull-left">
+          <a href="index.html"><img src="assets/img/sid_bandeirante_branco.png" alt=""></a>
+        </div>
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li><a href="index.html#">Início</a></li>
+            <li><a href="index.html#about">Sobre nós</a></li>
+            <li><a href="index.html#services">Nosso trabalho</a></li>
+            <li><a href="index.html#portfolio">Bandeirante</a></li>
+            <li><a href="index.html#testimonials">Homenagem</a></li>
+            <li><a href="index.html#contact">Contatos</a></li>
+            <li class="menu-active"><a class="cta-denuncia" href="denuncias.html">Canal de Denúncias</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+        <section class="container canal-wrap wow fadeInUp" style="max-width: 900px; margin: 120px auto 60px; padding: 24px; border: 1px solid #e9e9ee; border-radius: 12px;">
+          <h3 class="section-title">Canal de Denúncias</h3>
+          <div class="section-title-divider"></div>
+          <p class="muted" style="color:#6b7280">
+            Você pode denunciar de forma <strong>anônima</strong>. Suas informações são tratadas com <strong>confidencialidade</strong>.
+          </p>
+      
+      <!-- Consultar protocolo (campo para digitar) -->
+      <div id="consultar-protocolo-card" style="margin:16px 0; padding:12px; border:1px solid #e6e8f0; border-radius:8px">
+        <label for="consulta-protocolo" style="margin:0 12px 8px 0; font-weight:600; display:inline-block">
+          Consultar Protocolo:
+        </label>
+        <input type="text" id="consulta-protocolo" class="form-control"
+              style="max-width:320px; display:inline-block; vertical-align:middle"
+              placeholder="Ex.: SB-20250829-ABC123" autocomplete="off">
+        <button type="button" id="btn-consultar-protocolo" class="btn"
+                style="margin-left:8px; padding:8px 12px; border:1px solid #374A8F; color:#374A8F; background:#fff; border-radius:6px">
+          Consultar
+        </button>
+      </div>
+
+          <form class="php-email-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key"             value="a4aa7975-7e9b-4664-81fc-56d4f3184fbe">
+            <input type="hidden" name="from_name"              value="Site Siderúrgica Bandeirante">
+            <input type="hidden" name="subject"                value="[Canal de Denúncias] Novo relato">
+            <input type="hidden" name="redirect" id="redirect" value="https://siderurgicabandeirante.ind.br/denuncias-sucesso.html">
+            <input type="hidden" name="replyto"                value="email">
+            <input type="hidden" name="to"                     value="gustavo@siderurgicabandeirante.ind.br">
+            <input type="hidden" name="protocolo" id="protocolo">
+            <p id="pre-protocolo" class="alert alert-info" style="display:none;margin-top:10px">
+              Seu protocolo será gerado agora. Guarde-o para acompanhar o andamento.
+            </p>
+            
+
+            <div style="display:flex;align-items:center;gap:10px;margin:10px 0 20px">
+              <input type="checkbox" id="anonimo" name="anonimo" value="1" checked>
+              <label for="anonimo" style="margin:0">Quero permanecer anônimo</label>
+            </div>
+      
+            <div class="row" style="display:grid;gap:16px;grid-template-columns:1fr 1fr">
+              <div>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" placeholder="(opcional)">
+              </div>
+              <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="(opcional)">
+              </div>
+              <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(opcional)">
+              </div>
+              <div>
+                <label for="vinculo"><strong>Seu vínculo *</strong></label>
+                <select id="vinculo" name="vinculo" class="form-control" required>
+                  <option value="" selected disabled>Selecione…</option>
+                  <option>Empregado</option>
+                  <option>Terceirizado</option>
+                  <option>Fornecedor</option>
+                  <option>Visitante</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+      
+              <div style="grid-column:1/-1">
+                <label for="categoria"><strong>Categoria *</strong></label>
+                <select id="categoria" name="categoria" class="form-control" required>
+                  <option value="" selected disabled>Selecione…</option>
+                  <option>Assédio/Discriminação</option>
+                  <option>Saúde e Segurança</option>
+                  <option>Meio Ambiente</option>
+                  <option>Trabalho Infantil/Forçado</option>
+                  <option>Fraude/Anticorrupção</option>
+                  <option>Conduta Ética</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+      
+              <div style="grid-column:1/-1">
+                <label for="local">Local/Unidade</label>
+                <input type="text" id="local" name="local" class="form-control">
+              </div>
+      
+              <div style="grid-column:1/-1">
+                <label for="descricao"><strong>Descrição detalhada *</strong></label>
+                <textarea id="descricao" name="descricao" class="form-control" rows="6" required></textarea>
+              </div>
+      
+              <div style="grid-column:1/-1">
+                <div style="display:flex;align-items:center;gap:10px;margin:10px 0">
+                  <input type="checkbox" id="aceite" name="aceite" required>
+                  <label for="aceite" style="margin:0"><strong>Li e concordo com o aviso de privacidade</strong></label>
+                </div>
+                <p class="muted" style="color:#6b7280;font-size:14px;margin:0">
+                  Conforme a LGPD (Lei 13.709/2018), as informações serão usadas exclusivamente para apuração do relato.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Honeypot antispam -->
+            <div style="position:absolute;left:-5000px;top:-5000px;height:0;width:0;overflow:hidden;">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" autocomplete="off">
+            </div>
+      
+            <div style="display:flex;gap:12px;align-items:center;margin-top:16px">
+              <button type="submit" class="btn btn-primary">Enviar denúncia</button>
+              <a href="index.html" class="btn btn-secondary">Voltar</a>
+            </div>
+      
+            <p class="muted" style="margin-top:10px;color:#6b7280;font-size:14px">
+              Após o envio, será gerado um <strong>número de protocolo</strong>.
+            </p>
+          </form>
+        </section>
+      </main>
+      
+      <script>
+        // Desabilita nome/email/telefone quando "Anônimo" estiver marcado
+        const anon = document.getElementById('anonimo');
+        const ids = ['nome','email','telefone'];
+        const toggle = () => ids.forEach(id => { const el = document.getElementById(id); el.disabled = anon.checked; if (anon.checked) el.value=''; });
+        anon.addEventListener('change', toggle); toggle();
+      </script>
+      
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row"><div class="col-md-12">
+          <div class="copyright">
+            <strong>Siderúrgica Bandeirante</strong>, Av Jaime Rodrigues Branco - KM 02, Eldorado | Sete Lagoas MG
+            &nbsp;•&nbsp; <a class="cta-denuncia" href="denuncias.html">Canal de Denúncias</a>
+          </div>
+        </div></div>
+      </div>
+    </footer>
+
+    <!-- JS do template -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/wow/wow.min.js"></script>
+    <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="assets/vendor/superfish/superfish.min.js"></script>
+    <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/morphext/morphext.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

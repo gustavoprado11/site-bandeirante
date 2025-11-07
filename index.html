@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Siderúrgica Bandeirante</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <meta property="og:title" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <meta property="og:site_name" content="">
+        <meta property="og:description" content="">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+        <link href="assets/img/faicon.png" rel="icon">
+        <link href="assets/img/faicon.png" rel="apple-touch-icon">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+        <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <style>
+            .crisis-notice {
+              background: #fff3cd;
+              border-top: 4px solid #c69500;
+              border-bottom: 4px solid #c69500;
+              color: #5c4700;
+              padding: 25px 0;
+              margin-top: 20px;
+            }
+            .crisis-notice h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
+            .crisis-notice p { margin: 0; font-size: 1rem; line-height: 1.6; }
+            .cta-denuncia {
+              padding: 6px 12px;
+              border: 2px solid #374A8F;
+              border-radius: 999px;
+              font-weight: 600;
+              color: #374A8F !important;
+              background-color: #fff;
+              transition: .2s;
+              display: inline-block;
+              text-decoration: none;
+            }
+            .cta-denuncia:hover { background-color: #374A8F; color: #fff !important; }
+          </style>          
+
+    </head>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const input = document.getElementById('consulta-protocolo');
+          const btn   = document.getElementById('btn-consultar-protocolo');
+          if (btn && input) {
+            const ir = () => {
+              const v = (input.value || '').trim();
+              if (!v) { alert('Digite o protocolo.'); return; }
+              window.location.href = 'consulta.html?protocolo=' + encodeURIComponent(v);
+            };
+            btn.addEventListener('click', ir);
+            input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ir(); }});
+          }
+        });
+      </script>
+
+    <body>
+        <!-- ======= Inicio ======= -->
+        <section id="hero">
+            <div class="hero-container">
+                <div class="wow fadeIn">
+                    <div class="hero-logo">
+                        <img class="" src="assets/img/siderurgica_bandeirante_branco.png" alt="Imperial" style="width: 18%;">
+                    </div>
+                    <h1>
+                        Siderúrgica Bandeirante
+                        <br>
+                        <h2><i style="color: rgb(255, 255, 255);"> O nosso futuro está aqui, desde 1955.</i></h2>
+                    </h1>
+                    <h2>Produzindo ferro gusa <span class="rotating"> que transforma o país, que molda o futuro, com respeito a sociedade</span></h2>
+                    <div class="actions">
+                        <a href="#about" class="btn-services">Sobre nós</a>
+                        <a href="#services" class="btn-services">Nossos Serviços</a>
+                        <a href="denuncias.html" class="btn-services">Canal de Denúncias</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Inicio -->
+        <section id="crisis-notice" class="crisis-notice">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Comunicado de Paralisação</h3>
+                        <p>
+                            Em razão da grave crise que atinge o setor siderúrgico nacional, as operações da Siderúrgica Bandeirante estão temporariamente paralisadas. Seguimos monitorando o cenário econômico para retomar nossas atividades com segurança e manteremos colaboradores, clientes e fornecedores informados por nossos canais oficiais. Para esclarecimentos adicionais, utilize nossos contatos ou o Canal de Denúncias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Header ======= -->
+        <header id="header">
+            <div class="container">
+                <div id="logo" class="pull-left">
+                    <a href="index.html"><img src="assets/img/sid_bandeirante_branco.png" alt=""></a>
+                    <!-- Uncomment below if you prefer to use a text image -->
+                    <!--<h1><a href="index.html">Header 1</a></h1>-->
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="#">Início</a></li>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#services">Nosso trabalho</a></li>
+                        <li><a href="#portfolio">Bandeirante</a></li>
+                        <li><a href="#testimonials">Homenagem</a></li>
+                        <li><a href="#contact">Contatos</a></li>
+                        <li><a class="cta-denuncia" href="denuncias.html">Canal de Denúncias</a></li>
+                    </ul>
+                </nav>
+                <!-- #nav-menu-container -->
+            </div>
+        </header>
+        <!-- End Header -->
+        <main id="main">
+            <!-- ======= Sobre a Siderurgurica ======= -->
+            <section id="about">
+                <div class="container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="section-title">Sobre a Siderúrgica Bandeirante</h3>
+                            <p class="section-description">Mais de 70 anos no mercado, levando sempre qualidade transformada em nosso ferro gusa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container about-container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-6 about-img">
+                            <img src="assets/img/bandeirante3.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 about-content">
+                            <h2 class="about-title">NOSSA HISTÓRIA</h2>
+                            <p class="about-text" style="text-align: justify;">
+                                Fundada em 31 de julho de 1955 por Afonso Pereira da Silva e demais sócios, na cidade de Divinópolis, pertencente ao estado de Minas Gerais, a Siderúrgica Bandeirante contribuiu e ainda contribui, para a construção de um país melhor.
+                            </p>
+                            <p class="about-text" style="text-align: justify;">
+                                Seu processo de criação, fundação e consolidação perpassou por diversos anos e enfrentou incontáveis obstáculos. A falta de recursos financeiros bem como a inexperiência de seus fundadores no setor siderúrgico, eram fatores que por ventura poderiam inviabilizar a construção da empresa, porém foram esses mesmos fatores que os motivaram cada vez mais.
+                            </p>
+                            <p class="about-text" style="text-align: justify;">
+                                No ano de 1971, a empresa foi transferida para a cidade de Sete Lagoas, também município mineiro, porém sob a chefia e supervisão de apenas dois membros: Afonso Pereira da Silva e Antônio Zambalde do Prado, exercendo respectivamente as funções comerciais e logísticas. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sobre a Siderurgurica -->
+            <!-- ======= Nosso Trabalho ======= -->
+            <section id="services">
+            <div class="container wow fadeInUp">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="section-title">Nosso Trabalho</h3>
+                        <div class="section-title-divider"></div>
+                        <p class="section-description">Desde seu surgimento até os dias atuais, a Siderúrgica Bandeirante, trabalha com foco na produção e comercialização de Ferro Gusa para os mais variados setores industriais, como a ferragem para indústria automobilística e construção civil; e visa garantir material de qualidade para seus clientes e parceiros.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 service-item">
+                        <div class="service-icon"><i class="fa fa-wrench"></i></div>
+                        <h4 class="service-title"><a href="">Construção Civil</a></h4>
+                        <p class="service-description">A utilização do aço na construção civil é de suma importância, nosso gusa alimenta esse setor industrial levando força e resistência.</p>
+                    </div>
+                    <div class="col-md-4 service-item">
+                        <div class="service-icon"><i class="fa fa-ship"></i></div>
+                        <h4 class="service-title"><a href="">Naval</a></h4>
+                        <p class="service-description">O aço estrutural empregado na construção naval sai da nossa siderúrgica para os estaleiros, alimentando essa indústria</p>
+                    </div>
+                    <div class="col-md-4 service-item">
+                        <div class="service-icon"><i class="fa fa-car"></i></div>
+                        <h4 class="service-title"><a href="">Automobilístico</a></h4>
+                        <p class="service-description">Com o mais alto padrão de qualidade nosso gusa abastece aciarias Brasileiras levando chapas de aços para o setor automobilístico</p>
+                    </div>
+                </div>
+                <section>
+                    <div class="container wow fadeInUp">
+                        <div class="row portfolio-container">
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-empresa">
+                                <img src="assets/img/modais/modal_ferroviario.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-empresa">
+                                <img src="assets/img/modais/modal_naval.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-empresa">
+                                <img src="assets/img/modais/modal_rodoviario.jpg" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </div>
+            </section>
+            <!-- End Nosso Trabalho -->
+            <!-- ======= Saiba mais - Contato ======= -->
+            <section id="subscribe">
+                <div class="container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3 class="subscribe-title">Conheça mais sobre nós</h3>
+                            <p class="subscribe-text">Entre em contato conosco e faça parte do grupo de empresas que temos como parceiras</p>
+                        </div>
+                        <div class="col-md-4 subscribe-btn-container">
+                            <a class="subscribe-btn" href="contatos.html">Entre em Contato conosco</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Saiba mais - Contato -->
+            <!-- ======= Siderurgica Bandeirante - Fotos ======= -->
+            <section id="portfolio">
+                <div class="container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="section-title">Siderúrgica Bandeirante</h3>
+                            <div class="section-title-divider"></div>
+                            <p class="section-description">Conheça nossa empresa de perto</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <ul id="portfolio-flters">
+                                <li data-filter="*" class="filter-active">Todos</li>
+                                <li data-filter=".filter-empresa">Empresa</li>
+                                <li data-filter=".filter-usina">Usina</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row portfolio-container">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-empresa">
+                            <img src="assets/img/portfolio/placa_fundo.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Placa</h4>
+                                <p>Siderúrgica Bandeirante</p>
+                                <a href="assets/img/portfolio/placa.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Placa"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-usina">
+                            <img src="assets/img/gusa_siderurgica.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Rodeio de Gusa</h4>
+                                <p>Rodeio de Gusa</p>
+                                <a href="assets/img/gusa_siderurgica.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Balança"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-empresa">
+                            <img src="assets/img/portfolio/escritorio.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Escritório</h4>
+                                <p>Escritório administrativo da Siderúrgica Bandeirante</p>
+                                <a href="assets/img/portfolio/escritorio.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Escritório"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-usina">
+                            <img src="assets/img/portfolio/balanca_fundo.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Balança Rodoviária</h4>
+                                <p>Balança Rodoviária</p>
+                                <a href="assets/img/portfolio/balanca.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Pesagem de Carga"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-usina">
+                            <img src="assets/img/portfolio/alto_forno_bandeirante_fundo.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Alto Forno</h4>
+                                <p>Alto forno da Siderúrgica Bandeirante</p>
+                                <a href="assets/img/portfolio/alto_forno_bandeirante.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Alto Forno"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-usina">
+                            <img src="assets/img/portfolio/alto_forno_bandeirante_novo.jpeg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Alto Forno</h4>
+                                <p>Alto Forno da Siderúrgica Bandeirante</p>
+                                <a href="assets/img/portfolio/alto_forno_bandeirante_novo_sem_fundo.jpeg" data-gall="portfolioGallery" class="venobox preview-link" title="Entrada"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Siderurgica Bandeirante - Fotos -->
+            <!-- ======= Homenagem aos Fundadores ======= -->
+            <section id="testimonials">
+                <div class="container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="section-title">Homenagem aos Fundadores</h3>
+                            <div class="section-title-divider"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="portfolio-description">
+                            <h1>Afonso Pereira da Silva</h1>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="profile">
+                                        <img style="width: 260px; height: 325px;" src="assets/img/afonso_pereira.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <p style="text-align: justify;">
+                                        A história de Afonso Pereira da Silva se resume à palavra superação. 
+                                        Ele, nascido em família humilde, trabalhou desde novo e teve como principal 
+                                        ofício, o de ser motorista de caminhão. Entre uma viagem e outra, tornava-se 
+                                        cada mais vez mais intrigado e cada vez mais, despertava em si a vontade de 
+                                        crescer e de tornar realidade o que, ao longo do tempo, se tornaria seu 
+                                        sonho: ter uma empresa de Siderurgia.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        A vida acontecia e Afonso não perdia oportunidades. Fez inúmeras amizades e 
+                                        foi por meio delas que deu o pontapé inicial, para dar início a concretização 
+                                        de sua vontade. Abriu mão do seu único patrimônio - o caminhão no qual 
+                                        trabalhava - para levantar fundos financeiros e junto aos seus demais sócios, 
+                                        fundou a Siderúrgica Bandeirante.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Conta a história que Afonso era um homem centrado e ciente dos seus deveres e 
+                                        desafios. Tinha controle sob os fatos relacionados à empresa e com ciência, 
+                                        garantia o sucesso daquilo que geria.
+                                    </p>
+                                </div>
+                            </div>
+                            <p style="text-align: justify;">
+                                Afonso, no ano de 1971, abriu mão da empresa originalmente fundada em Divinópolis 
+                                e com coragem e braveza, a transferiu para Sete Lagoas. Junto a seu sócio e genro 
+                                Antõnio Zambalde do Prado, iniciou do zero a construção da nova planta da 
+                                Siderurgica Bandeirante, presente até os dias atuais.
+                            </p>
+                            <p style="text-align: justify;">
+                                Afonso faleceu em 12 de novembro de 1990, deixando um legado e uma história marcantes.
+                                <br>
+                                <br>
+                                Em sua família, amigos e parceiros, com toda certeza ficam muitas lembranças e 
+                                agradecimentos.
+                                <br>
+                                À ele, nosso muito obrigado.
+                            </p>
+                            <p style="text-align: justify;">
+                                <b>AFONSO PEREIRA DA SILVA</b>
+                                <br>
+                                17/02/19616 - 12/11/1990
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="container">
+                        <div class="portfolio-description">
+                            <h1>Antônio Zambalde do Prado</h1>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="profile">
+                                        <img style="width: 260px; height: 325px;" src="assets/img/antonio_zambalde.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <p style="text-align: justify;">
+                                        Antônio Zambalde do Prado foi um homem cativador, conquistador e principalmente, 
+                                        desbravador. Natural da cidade de Igarapé, território mineiro, migrou-se para a 
+                                        cidade de Divinópolis também em Minas Gerais. Cresceu e conheceu, durante sua 
+                                        adolescência, o grande amor de sua vida, Gleide Pereira do Prado.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        A história do casal foi escrita do melhor modo a ser imaginado para a época. 
+                                        Mal sabia Antônio que seria seu sogro, Afonso Pereira da Silva, que o 
+                                        apresentaria ao que seria o grande objetivo de suas vidas: a Siderúrgica 
+                                        Bandeirante.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Com a migração da Siderúrgica Bandeirante para a cidade de Sete Lagoas, 
+                                        AntÔnio tornou-se responsável pela logística e manutenção da parte 
+                                        funcional da empresa. E diga-se de passagem, o fez brilhantemente bem.
+                                    </p>
+                                    <p style="text-align: justify;">
+                                        Passou toda a sua vida se dedicando à Siderurgica, dia após dia. Com saúde e 
+                                        também na sua pior fase, quando adoeceu, não se deixou vencer e fazia 
+                                        questão de estar presente na empresa, dando todas as coordenadas para os 
+                                        fihos e funcionários.
+                                    </p>
+                                </div>
+                            </div>
+                            <p style="text-align: justify;">
+                                No ano de 2014, aos 65 anos, faleceu. Deixou uma história de amor, transparência, 
+                                coragem e muita luta. Uma história de superação, força de vontade e 
+                                principalmente, de lealdade.
+                            </p>
+                            <p style="text-align: justify;">
+                                Sr “Tunico” para os íntimos. Sr Antônio para quem ainda não o conhecia. Nosso muito 
+                                obrigado ao Senhor, por tudo que fez e principalmente por tudo que foi para 
+                                a sua família, amigos, parceiros e principalmente, para a Siderurgica Bandeirante.
+                            </p>
+                            <p style="text-align: justify;">
+                                Nossos agradecimentos a:
+                            </p>
+                            <p style="text-align: justify;">
+                                <b>ANTÔNIO ZAMBALDE DO PRADO</b>
+                                <br>
+                                31/12/1945 – 25/02/2014
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="quote" style="text-align: center;">
+                            <b>Nenhum sonho é grande demais que não possa se tornar realidade. </b>
+                            <br> Siderúrgica Bandeirante - O nosso futuro está aqui.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Homenagem aos Fundadores -->
+            <!-- ======= Entre em contato ======= -->
+            <section id="contact">
+                <div class="container wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="section-title">Entre em Contato conosco</h3>
+                            <div class="section-title-divider"></div>
+                            <p class="section-description">Envie-nos um e-mail ou entre em contato via telefone.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="info">
+                                <div>
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>Av. Jaime Rodrigues Branco,<br> KM 02, Eldorado<br>CEP: 35701-970 <br>
+                                        Sete Lagoas - MG, Brasil
+                                    </p>
+                                </div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="contatos.html">
+                                        <p>Lista de E-mails</p>
+                                    </a>
+                                </div>
+                                <div>
+                                    <i class="fa fa-phone"></i>
+                                    <p>(31) 3773-7811</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-8">
+                            <div class="form">
+
+<!-- Nota explicativa sobre o canal -->
+<div class="alert alert-secondary" style="margin:14px 0">
+    <strong>Sobre este canal:</strong> estamos implantando o Canal de Denúncias para receber relatos de forma
+    <strong>segura, confidencial e (se preferir) anônima</strong>. Seu relato é encaminhado à área responsável
+    para apuração. Use este canal apenas para temas éticos, integridade, segurança e conduta. Em emergências,
+    procure os canais oficiais (190/193) e não utilize este formulário.
+  </div>
+  
+  <!-- Consultar protocolo (campo para digitar) -->
+  <div class="card" style="margin:16px 0;border:1px solid #e6e8f0">
+    <div class="card-body" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <label for="consulta-protocolo" style="margin:0;white-space:nowrap"><strong>Consultar Protocolo:</strong></label>
+      <input id="consulta-protocolo" class="form-control" style="max-width:320px" placeholder="Ex.: SB-20250829-ABC123">
+      <button id="btn-consultar-protocolo" type="button" class="btn btn-outline-primary">Consultar</button>
+    </div>
+  </div>  
+
+                                <form action="https://api.web3forms.com/submit" method="POST" id="contato-form">
+                                    <!-- Web3Forms -->
+                                    <input type="hidden" name="access_key" value="a4aa7975-7e9b-4664-81fc-56d4f3184fbe">
+                                    <input type="hidden" name="from_name"  value="Site Siderúrgica Bandeirante">
+                                    <input type="hidden" name="subject"    value="[Contato] Mensagem do site">
+                                    <input type="hidden" name="to"         value="gustavo@siderurgicabandeirante.ind.br">
+                                    <input type="hidden" name="replyto"    value="email">
+                                    <input type="hidden" name="redirect"   value="https://siderurgicabandeirante.ind.br/contato-sucesso.html">
+                                    <!-- Honeypot anti-spam -->
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                                  
+                                    <div class="form-group">
+                                      <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="email" class="form-control" name="email" id="email" placeholder="Seu E-mail" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+                                    </div>
+
+                                    <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Entre em contato -->
+        </main>
+        <!-- Fim #main -->
+        <!-- ======= Rodapé ======= -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <strong>Siderúrgica Bandeirante</strong>, Av Jaime Rodrigues Branco - KM 02, Eldorado | Sete Lagoas MG
+                        </div>
+                    </div>
+                </div>
+            </div>
+            &nbsp;•&nbsp; <a class="cta-denuncia" href="denuncias.html">Canal de Denúncias</a>
+        </footer>
+        <!-- Fim Rodapé -->
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="assets/vendor/wow/wow.min.js"></script>
+        <script src="assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+        <script src="assets/vendor/superfish/superfish.min.js"></script>
+        <script src="assets/vendor/hoverIntent/hoverIntent.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="assets/vendor/venobox/venobox.min.js"></script>
+        <script src="assets/vendor/morphext/morphext.min.js"></script>
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
